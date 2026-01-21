@@ -8,7 +8,11 @@ def add_expense():
         print("Invalid amount. Please enter a number.")
         return
     print(f"Amount entered: {amount}")
+
     # 2. Ask user for durrency
+    currency = input("Enter currency (e.g., USD, GBP): ")
+    print(f"Currency entered: {currency}")
+    
     # 3. Ask user for category
     # 4. Ask user for date (optional)
     # 5. Store details in a dictionary or database
