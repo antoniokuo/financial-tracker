@@ -1,6 +1,13 @@
 def add_expense():
-    print("Add expense — not implemented yet")
+
     # 1. Ask user for amount
+    amount = input("Enter expense amount: ")
+    try:
+        amount = float(amount)
+    except:
+        print("Invalid amount. Please enter a number.")
+        return
+    print(f"Amount entered: {amount}")
     # 2. Ask user for durrency
     # 3. Ask user for category
     # 4. Ask user for date (optional)
