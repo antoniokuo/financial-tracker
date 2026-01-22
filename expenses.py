@@ -1,4 +1,6 @@
-def add_expense():
+expenses = [] # empty list to store expenses
+
+def add_expense(): # collect expense details from user
 
     # 1. Ask user for amount
     amount = input("Enter expense amount: ")
@@ -16,7 +18,7 @@ def add_expense():
     # 3. Ask user for category
     category = input("Enter category (press enter to skip): ")
     if category == "":
-        category = "Miscellaneouus"
+        category = "Miscellaneous"
     print(f"{amount}, {currency}, {category}")
 
     # 4. Ask user for date (optional)
@@ -24,11 +26,20 @@ def add_expense():
     if date == "":
         date = "Not specified"
     print(f"{amount}, {currency}, {category}, {date}")
-    
-    # 5. Store details in a dictionary or database
+
+    # 5. Store details in a dictionary
+    expense = {
+        "amount": amount,
+        "currency": currency,
+        "category": category,
+        "date": date
+    }
+    expenses.append(expense)
+    print(expenses)
 
     #6. Print confirmation message
-
+    print("Expense added successfully!")
+    print(f"Expense added: {amount} {currency} for {category} on {date}")
 
 
 def view_expenses():
