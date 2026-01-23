@@ -41,6 +41,12 @@ def add_expense(): # collect expense details from user
     print("Expense added successfully!")
     print(f"Expense added: {amount} {currency} for {category} on {date}")
 
-
 def view_expenses():
-    print("View expenses — not implemented yet")
+
+    if not expenses:
+        print("No expenses recorded yet.")
+        return
+    
+    for expense in expenses:
+        print(f"{expense['amount']} {expense['currency']} - {expense['category']} on {expense['date']}")
+        
