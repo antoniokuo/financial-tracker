@@ -1,3 +1,5 @@
+import json
+
 expenses = [] # empty list to store expenses
 
 def add_expense(): # collect expense details from user
@@ -37,9 +39,12 @@ def add_expense(): # collect expense details from user
     expenses.append(expense)
     print(expenses)
 
-    #6. Print confirmation message
+    # 6. Print confirmation message
     print("Expense added successfully!")
     print(f"Expense added: {amount} {currency} for {category} on {date}")
+
+    with open("data/finance_data.json", "w") as file:
+        json.dump(expenses, file)
 
 def view_expenses():
 
@@ -49,4 +54,3 @@ def view_expenses():
     
     for expense in expenses:
         print(f"{expense['amount']} {expense['currency']} - {expense['category']} on {expense['date']}")
-        
