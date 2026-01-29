@@ -1,9 +1,10 @@
 import json
 import os
+from utils import EXPENSES_FILE
 
 expenses = [] # empty list to store expenses
-if os.path.exists("data/expenses_data.json"):
-    with open("data/expenses_data.json", "r") as file:
+if os.path.exists(EXPENSES_FILE):
+    with open(EXPENSES_FILE, "r") as file:
         expenses = json.load(file)
 
 def add_expense(): # collect expense details from user
@@ -47,7 +48,7 @@ def add_expense(): # collect expense details from user
     print("Expense added successfully!")
     print(f"Expense added: {amount} {currency} for {category} on {date}")
 
-    with open("data/expenses_data.json", "w") as file:
+    with open(EXPENSES_FILE, "w") as file:
         json.dump(expenses, file)
 
 def view_expenses():
