@@ -47,7 +47,7 @@ def add_expense(): # collect expense details from user
     print("Expense added successfully!")
     print(f"Expense added: {amount} {currency} for {category} on {date}")
 
-    with open("data/finance_data.json", "w") as file:
+    with open("data/expenses_data.json", "w") as file:
         json.dump(expenses, file)
 
 def view_expenses():
