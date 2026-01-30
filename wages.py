@@ -1,11 +1,6 @@
-import json
-import os
-from utils import WAGES_FILE
+from utils import WAGES_FILE, load_data, save_data
 
-wages = [] # empty list to store wages
-if os.path.exists(WAGES_FILE):
-    with open(WAGES_FILE, "r") as file:
-        wages = json.load(file)
+wages = load_data(WAGES_FILE)
 
 def add_work_hours():
     # 1. Ask user for hours worked
@@ -50,8 +45,8 @@ def add_work_hours():
     print("Work hours added successfully!")
     print(f"Work hours added: {hours} hours at {rate} {currency} on date {date}")
 
-    with open(WAGES_FILE, "w") as file:
-        json.dump(wages, file)
+    save_data(WAGES_FILE, wages)
+
 
 def view_wages():
 
