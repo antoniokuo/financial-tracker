@@ -1,24 +1,20 @@
-from utils import WAGES_FILE, load_data, save_data
+from utils import WAGES_FILE, load_data, save_data, get_float_input
 
 wages = load_data(WAGES_FILE)
 
 def add_work_hours():
     # 1. Ask user for hours worked
-    hours = input("Enter work hours: ")
-    try:
-        hours = float(hours)
-    except ValueError:
-        print("Invalid input. Please enter a number.")
+    hours = get_float_input("Enter work hours: ")
+    if hours is None:
         return
+    
     print(f"Work hours entered: {hours}")
 
     # 2. Ask user for hourly rate
-    rate = input("Enter hourly rate: ")
-    try:
-        rate = float(rate)
-    except ValueError:
-        print("Invalid input. Please enter a number.")
+    rate = get_float_input("Enter hourly rate: ")
+    if rate is None:
         return
+    
     print(f"Hourly rate entered: {rate}")
 
     # 3. Ask user for currency
