@@ -1,4 +1,10 @@
-from utils import WAGES_FILE, load_data, save_data, get_float_input
+from utils import(
+    WAGES_FILE,
+    load_data,
+    save_data,
+    get_float_input,
+    get_currency_input
+)
 
 wages = load_data(WAGES_FILE)
 
@@ -18,7 +24,10 @@ def add_work_hours():
     print(f"Hourly rate entered: {rate}")
 
     # 3. Ask user for currency
-    currency = input("Enter currency (e.g., USD, GBP): ")
+    currency = get_currency_input("Enter currency (GBP, USD, EUR, etc.): ")
+    if currency is None:
+        return
+    
     print(f"Currency entered: {currency}")
 
     # 4. Ask user for date (optional)

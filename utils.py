@@ -4,15 +4,18 @@ WAGES_FILE = "data/wages_data.json"
 import json
 import os
 
+
 def load_data(file_path):
     if os.path.exists(file_path):
         with open(file_path, "r") as file:
             return json.load(file)
         return []
 
+
 def save_data(file_path, data):
     with open(file_path, "w") as file:
         json.dump(data, file)
+
 
 def get_float_input(prompt):
     value = input(prompt)
@@ -21,3 +24,13 @@ def get_float_input(prompt):
     except ValueError:
         print("Invalid input. Please enter a number.")
         return None
+
+
+def get_currency_input(prompt):
+    currency = input(prompt).upper()
+
+    if len(currency) != 3 or not currency.isalpha():
+        print("Invalid currency code. Please enter a 3-letter code (e.g. GBP, USD).")
+        return None
+    
+    return currency

@@ -1,4 +1,10 @@
-from utils import EXPENSES_FILE, load_data, save_data, get_float_input
+from utils import(
+EXPENSES_FILE,
+load_data,
+save_data,
+get_float_input,
+get_currency_input
+)
 
 expenses = load_data(EXPENSES_FILE)
 
@@ -12,7 +18,9 @@ def add_expense(): # collect expense details from user
     print(f"Amount entered: {amount}")
 
     # 2. Ask user for durrency
-    currency = input("Enter currency (e.g., USD, GBP): ")
+    currency = get_currency_input("Enter currency (GBP, USD, EUR, etc.): ")
+    if currency is None:
+        return
     print(f"Currency entered: {currency}")
 
     # 3. Ask user for category
