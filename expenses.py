@@ -1,16 +1,14 @@
-from utils import EXPENSES_FILE, load_data, save_data
+from utils import EXPENSES_FILE, load_data, save_data, get_float_input
 
 expenses = load_data(EXPENSES_FILE)
 
 def add_expense(): # collect expense details from user
 
     # 1. Ask user for amount
-    amount = input("Enter expense amount: ")
-    try:
-        amount = float(amount)
-    except ValueError:
-        print("Invalid amount. Please enter a number.")
+    amount = get_float_input("Enter expense amount: ")
+    if amount is None:
         return
+    
     print(f"Amount entered: {amount}")
 
     # 2. Ask user for durrency

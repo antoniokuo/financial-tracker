@@ -13,3 +13,11 @@ def load_data(file_path):
 def save_data(file_path, data):
     with open(file_path, "w") as file:
         json.dump(data, file)
+
+def get_float_input(prompt):
+    value = input(prompt)
+    try:
+        return float(value)
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+        return None
