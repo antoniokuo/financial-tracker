@@ -60,3 +60,18 @@ def view_expenses():
     
     for expense in expenses:
         print(f"{expense['amount']} {expense['currency']} - {expense['category']} on {expense['date']}")
+
+    totals = {}
+
+    for expense in expenses:
+        currency = expense['currency']
+        amount = expense['amount']
+
+        if currency not in totals:
+            totals[currency] = 0
+        
+        totals[currency] += amount
+
+    print("\nTotal Expenses:")
+    for currency, total in totals.items():
+        print(f"{currency}: {total}")
