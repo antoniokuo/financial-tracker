@@ -75,3 +75,20 @@ def view_expenses():
     print("\nTotal Expenses:")
     for currency, total in totals.items():
         print(f"{currency}: {total}")
+    
+
+def get_expense_totals():
+        
+    totals = {}
+
+    for expense in expenses:
+        currency = expense["currency"]
+        amount = expense["amount"]
+
+        if currency not in totals:
+            totals[currency] = 0
+            
+        totals[currency] += amount
+
+    return totals
+        
