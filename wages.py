@@ -61,3 +61,18 @@ def view_wages():
     
     for wage in wages:
         print(f"{wage['hours']} hours at {wage['rate']} {wage['currency']} on {wage['date']}")
+
+    totals = {}
+
+    for wage in wages:
+        currency = wage['currency']
+        total_pay = wage['hours'] * wage['rate']
+
+        if currency not in totals:
+            totals[currency] = 0
+
+        totals[currency] += total_pay
+
+    print("\nTotal Wages:")
+    for currency, total in totals.items():
+        print(f"{currency}: {total}")
