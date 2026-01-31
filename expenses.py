@@ -6,7 +6,7 @@ get_float_input,
 get_currency_input
 )
 
-expenses = load_data(EXPENSES_FILE)
+_expenses = load_data(EXPENSES_FILE)
 
 def add_expense(): # collect expense details from user
 
@@ -42,28 +42,28 @@ def add_expense(): # collect expense details from user
         "category": category,
         "date": date
     }
-    expenses.append(expense)
-    print(expenses)
+    _expenses.append(expense)
+    print(_expenses)
 
     # 6. Print confirmation message
     print("Expense added successfully!")
     print(f"Expense added: {amount} {currency} for {category} on {date}")
 
-    save_data(EXPENSES_FILE, expenses)
+    save_data(EXPENSES_FILE, _expenses)
 
 
 def view_expenses():
 
-    if not expenses:
+    if not _expenses:
         print("No expenses recorded yet.")
         return
     
-    for expense in expenses:
+    for expense in _expenses:
         print(f"{expense['amount']} {expense['currency']} - {expense['category']} on {expense['date']}")
 
     totals = {}
 
-    for expense in expenses:
+    for expense in _expenses:
         currency = expense['currency']
         amount = expense['amount']
 
@@ -81,9 +81,9 @@ def get_expense_totals():
         
     totals = {}
 
-    for expense in expenses:
-        currency = expense["currency"]
-        amount = expense["amount"]
+    for expense in _expenses:
+        currency = expense['currency']
+        amount = expense['amount']
 
         if currency not in totals:
             totals[currency] = 0
