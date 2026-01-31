@@ -14,7 +14,7 @@ def load_data(file_path: str) -> List[Dict[str, Any]]:
     return []
 
 
-def save_data(file_path, data):
+def save_data(file_path: str, data: list) -> None:
     with open(file_path, "w") as file:
         json.dump(data, file, indent=4)
 
