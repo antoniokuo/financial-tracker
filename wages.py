@@ -6,7 +6,7 @@ from utils import(
     get_currency_input
 )
 
-wages = load_data(WAGES_FILE)
+_wages = load_data(WAGES_FILE)
 
 def add_work_hours():
     # 1. Ask user for hours worked
@@ -43,28 +43,28 @@ def add_work_hours():
         "currency": currency,
         "date": date
     }
-    wages.append(wage)
-    print(wages)
+    _wages.append(wage)
+    print(_wages)
 
     # 6. Print confirmation message
     print("Work hours added successfully!")
     print(f"Work hours added: {hours} hours at {rate} {currency} on date {date}")
 
-    save_data(WAGES_FILE, wages)
+    save_data(WAGES_FILE, _wages)
 
 
 def view_wages():
 
-    if not wages:
+    if not _wages:
         print("No work hours recorded yet.")
         return
     
-    for wage in wages:
+    for wage in _wages:
         print(f"{wage['hours']} hours at {wage['rate']} {wage['currency']} on {wage['date']}")
 
     totals = {}
 
-    for wage in wages:
+    for wage in _wages:
         currency = wage['currency']
         total_pay = wage['hours'] * wage['rate']
 
@@ -82,7 +82,7 @@ def get_wage_totals():
 
     totals = {}
 
-    for wage in wages:
+    for wage in _wages:
         currency = wage['currency']
         total_pay = wage['hours'] * wage['rate']
 
