@@ -4,7 +4,7 @@ WAGES_FILE = "data/wages_data.json"
 import json
 import os
 
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 
 def load_data(file_path: str) -> List[Dict[str, Any]]:
@@ -19,7 +19,7 @@ def save_data(file_path: str, data: list) -> None:
         json.dump(data, file, indent=4)
 
 
-def get_float_input(prompt):
+def get_float_input(prompt: str) -> Optional[float]:
     value = input(prompt)
     try:
         return float(value)
