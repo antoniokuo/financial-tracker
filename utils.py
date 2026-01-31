@@ -4,8 +4,10 @@ WAGES_FILE = "data/wages_data.json"
 import json
 import os
 
+from typing import List, Dict, Any
 
-def load_data(file_path):
+
+def load_data(file_path: str) -> List[Dict[str, Any]]:
     if os.path.exists(file_path):
         with open(file_path, "r") as file:
             return json.load(file)
