@@ -31,3 +31,11 @@ Planned improvements:
 - Add basic unit tests
 - Prepare for a v2 with additional features (e.g. bill splitting)
 
+
+## Testing
+
+Basic unit tests are included using 'pytest'.
+
+To run tests:
+'''bash
+python -m pytest
