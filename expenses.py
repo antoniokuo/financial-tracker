@@ -18,8 +18,7 @@ def add_expense(): # collect expense details from user
 
     # 2. Ask user for durrency
     currency = get_currency_input("Enter currency (GBP, USD, EUR, etc.): ")
-    if currency is None:
-        return
+    
     print(f"Currency entered: {currency}")
 
     # 3. Ask user for category

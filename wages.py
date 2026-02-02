@@ -22,8 +22,6 @@ def add_work_hours():
 
     # 3. Ask user for currency
     currency = get_currency_input("Enter currency (GBP, USD, EUR, etc.): ")
-    if currency is None:
-        return
     
     print(f"Currency entered: {currency}")
 

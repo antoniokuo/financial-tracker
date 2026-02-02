@@ -28,15 +28,14 @@ def get_float_input(prompt: str) -> float:
             print("Invalid input. Please enter a number.")
 
 
-def get_currency_input(prompt):
-    currency = input(prompt).upper()
+def get_currency_input(prompt: str) -> str:
+    while True:
+        currency = input(prompt).upper()
 
-    if len(currency) != 3 or not currency.isalpha():
-        print("Invalid currency code. Please enter a 3-letter code (e.g. GBP, USD).")
-        return None
-    
-    return currency
-
+        if len(currency) == 3 and currency.isalpha():
+            return currency
+        
+        print("Invalid currency code. Please enter a 3-letter code (e.g. GBP, USD, EUR).") 
 
 def calculate_totals_by_currency(items, amount_fn):
     totals = {}
