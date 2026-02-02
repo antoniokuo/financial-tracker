@@ -13,8 +13,6 @@ def add_expense(): # collect expense details from user
 
     # 1. Ask user for amount
     amount = get_float_input("Enter expense amount: ")
-    if amount is None:
-        return
     
     print(f"Amount entered: {amount}")
 

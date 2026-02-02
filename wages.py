@@ -12,15 +12,11 @@ _wages = load_data(WAGES_FILE)
 def add_work_hours():
     # 1. Ask user for hours worked
     hours = get_float_input("Enter work hours: ")
-    if hours is None:
-        return
     
     print(f"Work hours entered: {hours}")
 
     # 2. Ask user for hourly rate
     rate = get_float_input("Enter hourly rate: ")
-    if rate is None:
-        return
     
     print(f"Hourly rate entered: {rate}")
 

@@ -19,13 +19,13 @@ def save_data(file_path: str, data: list) -> None:
         json.dump(data, file, indent=4)
 
 
-def get_float_input(prompt: str) -> Optional[float]:
-    value = input(prompt)
-    try:
-        return float(value)
-    except ValueError:
-        print("Invalid input. Please enter a number.")
-        return None
+def get_float_input(prompt: str) -> float:
+    while True:
+        value = input(prompt)
+        try:
+            return float(value)
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
 
 def get_currency_input(prompt):
