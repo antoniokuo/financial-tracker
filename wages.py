@@ -12,24 +12,17 @@ _wages = load_data(WAGES_FILE)
 def add_work_hours():
     # 1. Ask user for hours worked
     hours = get_float_input("Enter work hours: ")
-    
-    print(f"Work hours entered: {hours}")
 
     # 2. Ask user for hourly rate
     rate = get_float_input("Enter hourly rate: ")
-    
-    print(f"Hourly rate entered: {rate}")
 
     # 3. Ask user for currency
     currency = get_currency_input("Enter currency (GBP, USD, EUR, etc.): ")
-    
-    print(f"Currency entered: {currency}")
 
     # 4. Ask user for date (optional)
     date = input("Enter date (press enter to skip): ")
     if date == "":
         date = "not specified"
-    print(f"Date entered: {date}")
 
     # 5. Store details in a dictionary
     wage = {
@@ -39,7 +32,6 @@ def add_work_hours():
         "date": date
     }
     _wages.append(wage)
-    print(_wages)
 
     # 6. Print confirmation message
     print("Work hours added successfully!")
