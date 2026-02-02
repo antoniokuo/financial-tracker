@@ -36,3 +36,18 @@ def get_currency_input(prompt):
         return None
     
     return currency
+
+
+def calculate_totals_by_currency(items, amount_fn):
+    totals = {}
+
+    for item in items:
+        currency = item['currency']
+        amount = amount_fn(item)
+
+        if currency not in totals:
+            totals[currency] = 0
+        
+        totals[currency] += amount
+    
+    return totals

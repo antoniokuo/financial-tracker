@@ -3,7 +3,8 @@ from utils import(
     load_data,
     save_data,
     get_float_input,
-    get_currency_input
+    get_currency_input,
+    calculate_totals_by_currency
 )
 
 _wages = load_data(WAGES_FILE)
@@ -79,17 +80,7 @@ def view_wages():
     
 
 def get_wage_totals():
-
-    totals = {}
-
-    for wage in _wages:
-        currency = wage['currency']
-        total_pay = wage['hours'] * wage['rate']
-
-        if currency not in totals:
-            totals[currency] = 0
-
-        totals[currency] += total_pay
-
-    return totals
-    
+    return calculate_totals_by_currency(
+        _wages,
+        lambda wage: wage['hours'] * wage['rate']
+    )

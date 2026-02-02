@@ -3,7 +3,8 @@ EXPENSES_FILE,
 load_data,
 save_data,
 get_float_input,
-get_currency_input
+get_currency_input,
+calculate_totals_by_currency
 )
 
 _expenses = load_data(EXPENSES_FILE)
@@ -78,17 +79,7 @@ def view_expenses():
     
 
 def get_expense_totals():
-        
-    totals = {}
-
-    for expense in _expenses:
-        currency = expense['currency']
-        amount = expense['amount']
-
-        if currency not in totals:
-            totals[currency] = 0
-            
-        totals[currency] += amount
-
-    return totals
-        
+    return calculate_totals_by_currency(
+        _expenses,
+        lambda expense: expense['amount']
+    )
