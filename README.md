@@ -16,3 +16,14 @@ This project is designed as a personal financial tracker (v1) and structured to 
 
 ## Status
 Version 1 — personal use.
+
+## Roadmap
+
+This project is being developed incrementally as a learning exercise alongside my MSc Computer Science.
+
+Planned improvements:
+- Refactor duplicated logic (expenses and wages totals)
+- Improve input validation and error handling
+- Add basic unit tests
+- Prepare for a v2 with additional features (e.g. bill splitting)
+
