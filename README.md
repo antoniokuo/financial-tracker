@@ -19,6 +19,7 @@ This project is designed as a personal financial tracker (v1) and structured to 
 
 ## Status
 Version 1 — personal use.
+Current version: v1.1 (polish & refactor pass)
 
 
 ## Roadmap
