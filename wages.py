@@ -7,7 +7,12 @@ from utils import(
     calculate_totals_by_currency
 )
 
-_wages = load_data(WAGES_FILE)
+_wages = []
+
+def load_wages():
+    global _wages
+    _wages = load_data(WAGES_FILE)
+
 
 def add_work_hours():
     # 1. Ask user for hours worked

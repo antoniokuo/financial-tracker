@@ -7,7 +7,12 @@ get_currency_input,
 calculate_totals_by_currency
 )
 
-_expenses = load_data(EXPENSES_FILE)
+_expenses = []
+
+def load_expenses():
+    global _expenses
+    _expenses = load_data(EXPENSES_FILE)
+
 
 def add_expense(): # collect expense details from user
 

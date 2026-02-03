@@ -1,5 +1,5 @@
-from expenses import add_expense, view_expenses, get_expense_totals
-from wages import add_work_hours, view_wages, get_wage_totals
+from expenses import add_expense, view_expenses, get_expense_totals, load_expenses
+from wages import add_work_hours, view_wages, get_wage_totals, load_wages
 
 
 def show_menu():
@@ -13,6 +13,9 @@ def show_menu():
 
 
 def main():
+    load_expenses()
+    load_wages()
+
     while True:
         show_menu()
         choice = input("Select an option (1-6): ")
